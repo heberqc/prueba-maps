@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Mi Ubicación
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,5 +13,33 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-content>
+    <div class="ion-padding">
+  
+      <ion-button (click)="getCurrentCoordinates()" expand="block">
+        Get Location
+      </ion-button>
+  
+    <ion-list>
+      <ion-list-header>
+        <ion-label>Location Coordinates</ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-label>
+          Latitue
+        </ion-label>
+        <ion-badge color="danger" slot="end">{{latitude}}</ion-badge>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          Longitude
+        </ion-label>
+        <ion-badge color="danger" slot="end">{{longitude}}</ion-badge>
+      </ion-item>
+      </ion-list>    
+    </div>
+    <app-google-maps apiKey="AIzaSyCSCdGNfT5O7mKoh9jfPWKRTPHAZpqrezQ"></app-google-maps>
+  </ion-content>
+
+  <!-- <app-explore-container name="Tab 1 page"></app-explore-container> -->
 </ion-content>
